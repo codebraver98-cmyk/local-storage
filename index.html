@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h1>Save Text Using Local Storage</h1>
+    <input id="input" type="text" placeholder="Type something...">
+    <button id="save">Save</button>
+    <h2 id="output"></h2>
+    <script>
+        const text=document.getElementById('input')
+        const typing=localStorage.getItem('input') ||""
+        const screen=document.getElementById('output')
+        const save=document.getElementById('save')
+        text.value=typing
+        save.addEventListener('click',(e)=>{
+            localStorage.setItem('input',text.value)
+           
+        })
+        screen.innerHTML=typing
+        
+    </script>
+</body>
+</html>
